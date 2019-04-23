@@ -12,7 +12,7 @@ namespace C_Sharp_Fortgeschritten
         {
             try
             {
-                Calculator calc = new Calculator("Substract");
+                Calculator calc = new Calculator((op1, op2) => op1 + op2);
                 var result = calc.Calculate(21, 30);
                 Console.WriteLine($"Das Ergebnis ist: {result}");
             }catch(CalcException e)
