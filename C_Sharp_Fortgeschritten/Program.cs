@@ -10,6 +10,11 @@ namespace C_Sharp_Fortgeschritten
     {
         static void Main(string[] args)
         {
+            Calculator calc = new Calculator("Add");
+            var result = calc.Add(20, 30);
+            Console.WriteLine($"Das Ergebnis ist: {result}");
+
+            Console.ReadKey();
         }
     }
 }
