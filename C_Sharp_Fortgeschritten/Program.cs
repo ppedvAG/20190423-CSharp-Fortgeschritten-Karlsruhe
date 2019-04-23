@@ -10,9 +10,16 @@ namespace C_Sharp_Fortgeschritten
     {
         static void Main(string[] args)
         {
-            Calculator calc = new Calculator("Substract");
-            var result = calc.Calculate(20, 30);
-            Console.WriteLine($"Das Ergebnis ist: {result}");
+            try
+            {
+                Calculator calc = new Calculator("Add");
+                var result = calc.Calculate(21, 30);
+                Console.WriteLine($"Das Ergebnis ist: {result}");
+            }catch(CalcException e)
+            {
+                Console.WriteLine($"Der Rechner funktioniert nicht: {e.Message}");
+            }
+            
 
             Console.ReadKey();
         }

@@ -33,7 +33,14 @@ namespace C_Sharp_Fortgeschritten
 
         public int Calculate(int op1, int op2)
         {
-            return calcMethod.Invoke(op1, op2);
+            if (calcMethod == null)
+            {
+                throw new CalcException("Es ist keine Methode zum Rechnen vorhanden!");
+            }
+            else
+            {
+                return calcMethod.Invoke(op1, op2);
+            }
         }
     }
 }
