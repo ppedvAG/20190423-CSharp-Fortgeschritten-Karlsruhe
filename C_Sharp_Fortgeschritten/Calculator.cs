@@ -19,6 +19,12 @@ namespace C_Sharp_Fortgeschritten
             if (operation == "Add")
             {
                 calcMethod = new CalcMethod(Add);
+            } else if (operation == "Substract")
+            {
+                calcMethod = new CalcMethod(delegate(int op1, int op2)
+                {
+                    return op1 - op2;
+                });
             }
         }
 
