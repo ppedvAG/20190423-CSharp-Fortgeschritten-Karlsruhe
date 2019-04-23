@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C_Sharp_Fortgeschritten", "C_Sharp_Fortgeschritten\C_Sharp_Fortgeschritten.csproj", "{FD8F3237-09B9-4CA2-8D37-392E3C1FFE2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListenProgramm", "ListenProgramm\ListenProgramm.csproj", "{75DC8B64-CD60-46C5-9C00-150F0F7831BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FD8F3237-09B9-4CA2-8D37-392E3C1FFE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD8F3237-09B9-4CA2-8D37-392E3C1FFE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD8F3237-09B9-4CA2-8D37-392E3C1FFE2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75DC8B64-CD60-46C5-9C00-150F0F7831BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DC8B64-CD60-46C5-9C00-150F0F7831BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75DC8B64-CD60-46C5-9C00-150F0F7831BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75DC8B64-CD60-46C5-9C00-150F0F7831BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
