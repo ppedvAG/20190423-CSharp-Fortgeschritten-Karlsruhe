@@ -19,24 +19,30 @@ namespace C_Sharp_Fortgeschritten
             if (operation == "Add")
             {
                 calcMethod = new CalcMethod(Add);
+                // Anonyme Methode
             } else if (operation == "Substract")
             {
                 calcMethod = new CalcMethod(delegate(int op1, int op2)
                 {
                     return op1 - op2;
                 });
+                // Kurzschreibweise
             }  else if(operation == "Divide")
             {
                 calcMethod = delegate (int op1, int op2)
                 {
                     return op1 / op2;
                 };
+                // Lambdaschreibweise
             } else if(operation == "Multiply")
             {
                 calcMethod = (op1, op2) =>
                 {
                     return op1 * op2;
                 };
+            } else if(operation == "Modulo")
+            {
+                calcMethod = (op1, op2) => op1 % op2;
             }
         }
 
