@@ -25,6 +25,18 @@ namespace C_Sharp_Fortgeschritten
                 {
                     return op1 - op2;
                 });
+            }  else if(operation == "Divide")
+            {
+                calcMethod = delegate (int op1, int op2)
+                {
+                    return op1 / op2;
+                };
+            } else if(operation == "Multiply")
+            {
+                calcMethod = (op1, op2) =>
+                {
+                    return op1 * op2;
+                };
             }
         }
 
@@ -32,11 +44,7 @@ namespace C_Sharp_Fortgeschritten
         {
             return op1 + op2;
         }
-        public int Subtract(int op1, int op2)
-        {
-            return op1 - op2;
-        }
-
+ 
         public int Calculate(int op1, int op2)
         {
             if (calcMethod == null)
