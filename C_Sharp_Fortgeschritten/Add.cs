@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C_Sharp_Fortgeschritten.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace C_Sharp_Fortgeschritten
 {
-    class Add : ICalcMethod
+    class Add : ICalcMethods
     {
-        public int Calculate(int op1, int op2)
-        {
-            return op1 + op2;
-        }
+        public string Method => "+";
+
+        public decimal Do(decimal op1, decimal op2) => op1 + op2;
     }
 }

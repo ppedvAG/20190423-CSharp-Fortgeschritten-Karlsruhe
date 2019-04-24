@@ -45,8 +45,14 @@
   <ItemGroup>
     <Compile Include="Add.cs" />
     <Compile Include="CalcException.cs" />
-    <Compile Include="Calculator.cs" />
-    <Compile Include="ICalcMethod.cs" />
+    <Compile Include="CalculatorMaster.cs" />
+    <Compile Include="Logic\CalcV2.cs" />
+    <Compile Include="Logic\Calc.cs" />
+    <Compile Include="Logic\Parser.cs" />
+    <Compile Include="Logic\ParserV2.cs" />
+    <Compile Include="Model\ICalc.cs" />
+    <Compile Include="Model\ICalcMethods.cs" />
+    <Compile Include="Model\IParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

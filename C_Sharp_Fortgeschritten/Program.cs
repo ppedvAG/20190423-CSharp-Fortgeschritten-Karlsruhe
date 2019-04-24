@@ -12,7 +12,7 @@ namespace C_Sharp_Fortgeschritten
         {
             try
             {
-                Calculator calculator = new Calculator();
+                CalculatorMaster calculator = new CalculatorMaster();
                 calculator.Start();
             }catch(CalcException e)
             {
