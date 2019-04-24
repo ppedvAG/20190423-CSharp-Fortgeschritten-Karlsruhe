@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace ListenProgramm
 {
     //https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters
-    class Datenwörterbuch<T>: IEnumerable<InternalArrayType<T>> where T: struct
+    class Datenwörterbuch<TKey, TValue>: IEnumerable<InternalArrayType<TKey, TValue>> where TKey: struct
     {
-        public T[] Keys
+        public TKey[] Keys
         {
             get
             {
-                var keyArray = new T[_internalArray.Length];
+                var keyArray = new TKey[_internalArray.Length];
                 for (int i = 0; i < _internalArray.Length; i++)
                 {
                     keyArray[i] = _internalArray[i].key;
@@ -22,11 +22,11 @@ namespace ListenProgramm
                     return keyArray;
             }
         }
-        public string[] Values
+        public TValue[] Values
         {
             get
             {
-                var valueArray = new string[_internalArray.Length];
+                var valueArray = new TValue[_internalArray.Length];
                 for (int i = 0; i < _internalArray.Length; i++)
                 {
                     valueArray[i] = _internalArray[i].value;
@@ -36,18 +36,18 @@ namespace ListenProgramm
         }
 
         //public string[] Values {get; private set;}
-        private InternalArrayType<T>[] _internalArray;
+        private InternalArrayType<TKey, TValue>[] _internalArray;
 
-        public void Add(T key, string value)
+        public void Add(TKey key, TValue value)
         {
             if (_internalArray == null)
             {
-                _internalArray = new InternalArrayType<T>[1];
+                _internalArray = new InternalArrayType<TKey, TValue>[1];
                 _internalArray[0].key = key;
                 _internalArray[0].value = value;
             } else
             {
-                var _internalArrayCopy = new InternalArrayType<T>[_internalArray.Length + 1];
+                var _internalArrayCopy = new InternalArrayType<TKey, TValue>[_internalArray.Length + 1];
                 // Ohne Kopierkonstruktor
                 for (int i = 0; i < _internalArray.Length; i++)
                 {
@@ -59,9 +59,9 @@ namespace ListenProgramm
                 _internalArray = _internalArrayCopy;
             }
         }
-        public void Remove(T key)
+        public void Remove(TKey key)
         {
-            var _internalArrayCopy = new InternalArrayType<T>[_internalArray.Length - 1];
+            var _internalArrayCopy = new InternalArrayType<TKey, TValue>[_internalArray.Length - 1];
             int j = 0;
             for(int i = 0; i < _internalArray.Length; i++)
             {
@@ -79,7 +79,7 @@ namespace ListenProgramm
             return GetEnumerator();
         }
 
-        public IEnumerator<InternalArrayType<T>> GetEnumerator()
+        public IEnumerator<InternalArrayType<TKey, TValue>> GetEnumerator()
         {
             foreach(var item in _internalArray)
             {
@@ -87,9 +87,9 @@ namespace ListenProgramm
             }
         }
     }
-    public struct InternalArrayType<T>
+    public struct InternalArrayType<TKey, TValue>
     {
-        public T key;
-        public string value;
+        public TKey key;
+        public TValue value;
     }
 }
