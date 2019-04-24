@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace ListenProgramm
 {
-    class Datenwörterbuch: IEnumerable<InternalArrayType>
+    //https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters
+    class Datenwörterbuch<T>: IEnumerable<InternalArrayType<T>> where T: struct
     {
-        public int[] Keys
+        public T[] Keys
         {
             get
             {
-                var keyArray = new int[_internalArray.Length];
+                var keyArray = new T[_internalArray.Length];
                 for (int i = 0; i < _internalArray.Length; i++)
                 {
                     keyArray[i] = _internalArray[i].key;
@@ -35,18 +36,18 @@ namespace ListenProgramm
         }
 
         //public string[] Values {get; private set;}
-        private InternalArrayType[] _internalArray;
+        private InternalArrayType<T>[] _internalArray;
 
-        public void Add(int key, string value)
+        public void Add(T key, string value)
         {
             if (_internalArray == null)
             {
-                _internalArray = new InternalArrayType[1];
+                _internalArray = new InternalArrayType<T>[1];
                 _internalArray[0].key = key;
                 _internalArray[0].value = value;
             } else
             {
-                var _internalArrayCopy = new InternalArrayType[_internalArray.Length + 1];
+                var _internalArrayCopy = new InternalArrayType<T>[_internalArray.Length + 1];
                 // Ohne Kopierkonstruktor
                 for (int i = 0; i < _internalArray.Length; i++)
                 {
@@ -58,13 +59,13 @@ namespace ListenProgramm
                 _internalArray = _internalArrayCopy;
             }
         }
-        public void Remove(int key)
+        public void Remove(T key)
         {
-            var _internalArrayCopy = new InternalArrayType[_internalArray.Length - 1];
+            var _internalArrayCopy = new InternalArrayType<T>[_internalArray.Length - 1];
             int j = 0;
             for(int i = 0; i < _internalArray.Length; i++)
             {
-                if(_internalArray[i].key == key)
+                if(_internalArray[i].key.Equals(key))
                 {
                     continue;
                 }
@@ -78,19 +79,17 @@ namespace ListenProgramm
             return GetEnumerator();
         }
 
-        public IEnumerator<InternalArrayType> GetEnumerator()
+        public IEnumerator<InternalArrayType<T>> GetEnumerator()
         {
             foreach(var item in _internalArray)
             {
                 yield return item;
             }
         }
-
-    
     }
-    public struct InternalArrayType
+    public struct InternalArrayType<T>
     {
-        public int key;
+        public T key;
         public string value;
     }
 }

@@ -61,15 +61,18 @@ namespace ListenProgramm
             Console.WriteLine(dict.Values);
 
             Console.WriteLine("------------------Datenwörterbuch mit ForEach---------------------------");
-            Datenwörterbuch dw = new Datenwörterbuch();
-            dw.Add(10, "Test");
+            Datenwörterbuch<char> dw1 = new Datenwörterbuch<char>();
+            dw1.Add('a', "30");
+            
+            /*dw.Add(10, "Test");
             dw.Add(9, "Test2");
+            dw.Add("9", "Test2");
             dw.Add(7, "Test3");
             
             foreach(var item in dw)
             {
                 Console.WriteLine(item.value);
-            }
+            }*/
 
             dw.Remove(9);
             
