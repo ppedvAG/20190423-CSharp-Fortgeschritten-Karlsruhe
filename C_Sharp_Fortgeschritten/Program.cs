@@ -28,7 +28,7 @@ namespace C_Sharp_Fortgeschritten
                 }
                 // Gehe die gesamte Assembly durch und hole uns die ICalcMethods
                 Console.WriteLine(Assembly.LoadFrom("Plugins/AdditionalOperators.dll").GetTypes());
-                List<ICalcMethods> calcMethods = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.StartsWith("Additional"))
+                List<ICalcMethods> calcMethods = AppDomain.CurrentDomain?.GetAssemblies()?.Where(x => x.FullName.StartsWith("Additional"))
                     .SelectMany(x => x.GetTypes())
                     .Where(x => typeof(ICalcMethods).IsAssignableFrom(x))
                     .Select(x => (ICalcMethods)Activator.CreateInstance(x))
