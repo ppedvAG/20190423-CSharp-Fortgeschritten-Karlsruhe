@@ -16,11 +16,17 @@ namespace C_Sharp_Fortgeschritten
         {
             try
             {
+                // ToDo: Null Checks hinzufügen
+                // Hole uns alle Dateien aus dem Ordner Plugins
                 foreach (string datei in Directory.GetFiles(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Plugins")))
                 {
-                    if(Path.GetExtension(datei) == ".dll")
-                    Assembly.LoadFrom(datei);
+                    if (Path.GetExtension(datei) == ".dll")
+                    {
+                        // Füge die .dll Datei der Assembly hinzu
+                        Assembly.LoadFrom(datei);
+                    }
                 }
+                // Gehe die gesamte Assembly durch und hole uns die ICalcMethods
                 Console.WriteLine(Assembly.LoadFrom("Plugins/AdditionalOperators.dll").GetTypes());
                 List<ICalcMethods> calcMethods = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.StartsWith("Additional"))
                     .SelectMany(x => x.GetTypes())
