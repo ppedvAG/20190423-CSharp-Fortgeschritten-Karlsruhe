@@ -24,14 +24,13 @@ namespace Threading
         private static void MachEtwas(object durchlauf)
         {
             Console.WriteLine("Der Lock wird belegt");
-            lock (lockObject)
+            Monitor.Enter(lockObject);
+            Console.WriteLine("Durchlauf " + durchlauf);
+            for(int i = 90; i > 0; i--)
             {
-                Console.WriteLine("Durchlauf " + durchlauf);
-                for(int i = 90; i > 0; i--)
-                {
-                    Console.WriteLine($"Durchlauf {(int)durchlauf}: " + i);
-                }
+                 Console.WriteLine($"Durchlauf {(int)durchlauf}: " + i);
             }
+            Monitor.Exit(lockObject);
             Console.WriteLine("Der Lock ist Frei");
             Console.WriteLine("Der LockL2 wird belegt");
             lock (lockObject)
