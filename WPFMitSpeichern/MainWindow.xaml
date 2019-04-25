@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPFMitSpeichern.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFMitSpeichern"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="141,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Titel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.158,0.13" Text="{Binding Länge}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Regisseur}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding FSK}"/>
+        <CheckBox Content="Vor 2000?" HorizontalAlignment="Left" Margin="141,203,0,0" VerticalAlignment="Top" IsChecked="{Binding Vor2000}"/>
+        <Button Content="Speichern" HorizontalAlignment="Left" Margin="174,324,0,0" VerticalAlignment="Top" Width="124" Height="33" Click="Speichern_Button_Click"/>
+        <Button Content="Öffnen" HorizontalAlignment="Left" Margin="437,324,0,0" VerticalAlignment="Top" Width="124" Height="33"/>
+        <Label Content="Titel" HorizontalAlignment="Left" Margin="266,78,0,0" VerticalAlignment="Top"/>
+        <Label Content="Länge" HorizontalAlignment="Left" Margin="266,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.625,1.462"/>
+        <Label Content="Regisseur" HorizontalAlignment="Left" Margin="266,134,0,0" VerticalAlignment="Top"/>
+        <Label Content="FSK" HorizontalAlignment="Left" Margin="266,165,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
