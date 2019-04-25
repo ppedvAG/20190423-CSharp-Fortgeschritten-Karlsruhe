@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.IO;
 
 namespace C_Sharp_Fortgeschritten
 {
@@ -15,12 +16,18 @@ namespace C_Sharp_Fortgeschritten
         {
             try
             {
-                var operatorAssembly = Assembly.LoadFrom("AdditionalOperators.dll");
+                foreach (string datei in Directory.GetFiles(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Plugins")))
+                {
+                    if(Path.GetExtension(datei) == ".dll")
+                    Assembly.LoadFrom(datei);
+                }
+                Console.WriteLine(Assembly.LoadFrom("Plugins/AdditionalOperators.dll").GetTypes());
                 List<ICalcMethods> calcMethods = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.StartsWith("Additional"))
                     .SelectMany(x => x.GetTypes())
                     .Where(x => typeof(ICalcMethods).IsAssignableFrom(x))
                     .Select(x => (ICalcMethods)Activator.CreateInstance(x))
                     .ToList();
+                    
                 //Type calculatorType = operatorAssembly.GetType("C_Sharp_Fortgeschritten.CalculatorMaster");
                 //object calculatorInstance = Activator.CreateInstance(calculatorType);
 
