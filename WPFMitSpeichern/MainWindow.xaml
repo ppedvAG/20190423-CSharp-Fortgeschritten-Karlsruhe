@@ -13,7 +13,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="141,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding FSK}"/>
         <CheckBox Content="Vor 2000?" HorizontalAlignment="Left" Margin="141,203,0,0" VerticalAlignment="Top" IsChecked="{Binding Vor2000}"/>
         <Button Content="Speichern" HorizontalAlignment="Left" Margin="174,324,0,0" VerticalAlignment="Top" Width="124" Height="33" Click="Speichern_Button_Click"/>
-        <Button Content="Öffnen" HorizontalAlignment="Left" Margin="437,324,0,0" VerticalAlignment="Top" Width="124" Height="33"/>
+        <Button Content="Öffnen" HorizontalAlignment="Left" Margin="437,324,0,0" VerticalAlignment="Top" Width="124" Height="33" Click="Button_Click"/>
         <Label Content="Titel" HorizontalAlignment="Left" Margin="266,78,0,0" VerticalAlignment="Top"/>
         <Label Content="Länge" HorizontalAlignment="Left" Margin="266,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.625,1.462"/>
         <Label Content="Regisseur" HorizontalAlignment="Left" Margin="266,134,0,0" VerticalAlignment="Top"/>
