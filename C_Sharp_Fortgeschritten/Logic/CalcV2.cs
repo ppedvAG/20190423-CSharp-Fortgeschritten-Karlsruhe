@@ -9,9 +9,9 @@ namespace C_Sharp_Fortgeschritten.Logic
 {
     public class CalcV2 : ICalc
     {
-        private readonly ICalcMethods[] calcMethods;
+        private readonly List<ICalcMethods> calcMethods;
 
-        public CalcV2(ICalcMethods[] calcMethods)
+        public CalcV2(List<ICalcMethods> calcMethods)
         {
             this.calcMethods = calcMethods;
 

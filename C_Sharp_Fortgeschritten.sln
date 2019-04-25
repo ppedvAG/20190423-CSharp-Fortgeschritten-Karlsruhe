@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C_Sharp_Fortgeschritten", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListenProgramm", "ListenProgramm\ListenProgramm.csproj", "{75DC8B64-CD60-46C5-9C00-150F0F7831BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdditionalOperators", "AdditionalOperators\AdditionalOperators.csproj", "{5D061759-0E3D-4934-84E7-DACA1D7A1F6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{75DC8B64-CD60-46C5-9C00-150F0F7831BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75DC8B64-CD60-46C5-9C00-150F0F7831BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75DC8B64-CD60-46C5-9C00-150F0F7831BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D061759-0E3D-4934-84E7-DACA1D7A1F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D061759-0E3D-4934-84E7-DACA1D7A1F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D061759-0E3D-4934-84E7-DACA1D7A1F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D061759-0E3D-4934-84E7-DACA1D7A1F6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,21 +10,21 @@ namespace C_Sharp_Fortgeschritten
 {
     class CalculatorMaster
     {
+        private readonly IParser parser;
+        private readonly ICalc calculator;
+   
         List<ICalcMethods> CalcMethods = new List<ICalcMethods>();
-        public CalculatorMaster()
-        {
 
+        public CalculatorMaster(IParser parser, ICalc calculator)
+        {
+            this.parser = parser;
+            this.calculator = calculator;
         }
+  
         public void Start()
         {
             Console.WriteLine("Bitte gib den Ausdruck ein:");
             var input = Console.ReadLine();
-
-            var calculationMethods = new ICalcMethods[1];
-            calculationMethods[0] = new Add();
-
-            var calculator = new CalcV2(calculationMethods);
-            var parser = new ParserV2();
 
             // Den eingegebenen String als Tupel (decimal, decimal, string) zurückgeben
             var expression = parser.Parse(input);
