@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdditionalModuloOperator", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{15DD59B7-4BCE-489B-BA8F-F267934CB2F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPL", "TPL\TPL.csproj", "{629AF449-AA47-4296-B603-C3E02676A02D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{15DD59B7-4BCE-489B-BA8F-F267934CB2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15DD59B7-4BCE-489B-BA8F-F267934CB2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15DD59B7-4BCE-489B-BA8F-F267934CB2F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{629AF449-AA47-4296-B603-C3E02676A02D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629AF449-AA47-4296-B603-C3E02676A02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629AF449-AA47-4296-B603-C3E02676A02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629AF449-AA47-4296-B603-C3E02676A02D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
