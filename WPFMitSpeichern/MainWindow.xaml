@@ -3,21 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFMitSpeichern"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="456" Width="812">
     <Grid>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="141,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Titel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.158,0.13" Text="{Binding Länge}"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Regisseur}"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding FSK}"/>
-        <CheckBox Content="Vor 2000?" HorizontalAlignment="Left" Margin="141,203,0,0" VerticalAlignment="Top" IsChecked="{Binding Vor2000}"/>
-        <Button Content="Speichern" HorizontalAlignment="Left" Margin="174,324,0,0" VerticalAlignment="Top" Width="124" Height="33" Click="Speichern_Button_Click"/>
-        <Button Content="Öffnen" HorizontalAlignment="Left" Margin="437,324,0,0" VerticalAlignment="Top" Width="124" Height="33" Click="Button_Click"/>
-        <Label Content="Titel" HorizontalAlignment="Left" Margin="266,78,0,0" VerticalAlignment="Top"/>
-        <Label Content="Länge" HorizontalAlignment="Left" Margin="266,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.625,1.462"/>
-        <Label Content="Regisseur" HorizontalAlignment="Left" Margin="266,134,0,0" VerticalAlignment="Top"/>
-        <Label Content="FSK" HorizontalAlignment="Left" Margin="266,165,0,0" VerticalAlignment="Top"/>
+        <Button Content="Speichern" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" Width="124" Height="20" Click="Speichern_Button_Click"/>
+        <Button Content="Öffnen" HorizontalAlignment="Left" Margin="10,10,0,382" VerticalAlignment="Top" Width="124" Height="20" Click="Oeffnen_Button_Click"/>
+        <ListBox HorizontalAlignment="Left" Name="FilmeListBox" Height="261" Margin="80,59,0,0" VerticalAlignment="Top" Width="446" ItemsSource="{Binding FilmListe, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="FilmeListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Titel}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Eintrag hinzufügen" HorizontalAlignment="Left" Margin="80,325,0,0" VerticalAlignment="Top" Width="446" Height="33" Click="Add_Entry_Button_Click"/>
+        <Button Content="Eintrag bearbeiten" HorizontalAlignment="Left" Margin="80,372,0,0" VerticalAlignment="Top" Width="200" Height="33" Click="Edit_Entry_Button_Click"/>
+        <Button Content="Eintrag löschen" HorizontalAlignment="Left" Margin="326,372,0,0" VerticalAlignment="Top" Width="200" Height="33" Click="Delete_Entry_Button_Click"/>
+        <Grid Margin="568,93,10,121" Name="FilmEditor">
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Titel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="0,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.158,0.13" Text="{Binding Länge}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="0,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Regisseur}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="0,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding FSK}"/>
+            <CheckBox Content="Vor 2000?" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" IsChecked="{Binding Vor2000}"/>
 
+            <Label Content="Titel" HorizontalAlignment="Left" Margin="138,-3,0,0" VerticalAlignment="Top"/>
+            <Label Content="Länge" HorizontalAlignment="Left" Margin="138,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.625,1.462"/>
+            <Label Content="Regisseur" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top"/>
+            <Label Content="FSK" HorizontalAlignment="Left" Margin="138,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.828,0.538"/>
+        </Grid>
     </Grid>
 </Window>
